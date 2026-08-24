@@ -1,12 +1,10 @@
 import tkinter as tk
 from tkinter import filedialog, messagebox
 from PIL import Image
-
 # ---------------- Image Functions ---------------- #
 def encrypt_image(img, key):
     pixels = img.load()
     width, height = img.size
-
     for i in range(width):
         for j in range(height):
             r, g, b = pixels[i, j]
@@ -15,12 +13,8 @@ def encrypt_image(img, key):
             r = (r + key) % 256
             g = (g + key) % 256
             b = (b + key) % 256
-
             pixels[i, j] = (g, b, r)  # swap channels
-
     return img
-
-
 def decrypt_image(img, key):
     pixels = img.load()
     width, height = img.size
@@ -28,7 +22,6 @@ def decrypt_image(img, key):
     for i in range(width):
         for j in range(height):
             g, b, r = pixels[i, j]  # reverse swap
-
             r = (r - key) % 256
             g = (g - key) % 256
             b = (b - key) % 256
@@ -36,7 +29,6 @@ def decrypt_image(img, key):
             pixels[i, j] = (r, g, b)
 
     return img
-
 
 # ---------------- GUI Functions ---------------- #
 def open_image():
@@ -46,13 +38,11 @@ def open_image():
         img = Image.open(img_path)
         messagebox.showinfo("Success", "Image loaded successfully!")
 
-
 def save_image(image):
     save_path = filedialog.asksaveasfilename(defaultextension=".png")
     if save_path:
         image.save(save_path)
         messagebox.showinfo("Saved", "Image saved successfully!")
-
 
 def perform_encrypt():
     if not img:
@@ -67,7 +57,6 @@ def perform_encrypt():
     encrypted = encrypt_image(img.copy(), int(key))
     save_image(encrypted)
 
-
 def perform_decrypt():
     if not img:
         messagebox.showerror("Error", "Please load an image first!")
@@ -80,8 +69,6 @@ def perform_decrypt():
 
     decrypted = decrypt_image(img.copy(), int(key))
     save_image(decrypted)
-
-
 # ---------------- GUI Design ---------------- #
 root = tk.Tk()
 root.title("Image Encryption Tool")
