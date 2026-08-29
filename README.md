@@ -7,7 +7,6 @@
 This project is a **GUI-based Image Encryption Tool** developed using **Python**. It uses **pixel manipulation techniques** to encrypt and decrypt images by modifying RGB values and swapping color channels.
 
 This project is part of my **SkillCraft Technology Internship (Task 02)** and focuses on applying basic cybersecurity concepts to image data.
-
 ## 🚀 Features
 
 * 🔐 Encrypt images using a numeric key
@@ -15,9 +14,8 @@ This project is part of my **SkillCraft Technology Internship (Task 02)** and fo
 * 🔄 Pixel-level data transformation
 * 🎨 RGB channel swapping
 * 🖥️ Simple and user-friendly GUI
-
+* 
 ## 🛠️ Technologies Used
-
 * Python 3
 * Tkinter (GUI)
 * Pillow (Image Processing)
@@ -39,21 +37,13 @@ image-encryption-tool/
 Download from: https://www.python.org
 
 ✔ Add Python to PATH
-
----
-
 ### 2️⃣ Install Dependencies
-
-```
 pip install Pillow
 ``
----
-
 ### 3️⃣ Run the Application
 
-```
 python image_encryptor.py
-```
+
 ## 💡 How It Works
 
 * Each pixel contains RGB values `(R, G, B)`
@@ -68,10 +58,8 @@ python image_encryptor.py
 
 ## 🖼️ Example Workflow
 
-```
 Original Image → Encrypt (Key) → Distorted Image  
 Distorted Image → Decrypt (Same Key) → Original Image
-```
 
 ## 🎯 Use Cases
 
